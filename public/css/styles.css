@@ -1,0 +1,152 @@
+:root {
+    --navbar-bg: #022c5d;
+}
+
+/* Body adjustment for fixed header */
+body {
+    padding-top: 76px;
+}
+
+/* Navbar styles */
+.custom-navbar {
+    background-color: var(--navbar-bg) !important;
+    padding: 0.5rem 0;
+}
+
+.logo-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #24bf41 !important;
+}
+
+/* Hero section */
+.hero-section {
+    position: relative;
+    padding: 0;
+    margin-top: -76px; /* Compensate for fixed header */
+}
+
+.welcome-banner {
+    background-color: var(--navbar-bg);
+    padding: 14rem 0 4rem;
+    text-align: center;
+    
+}
+
+.hero-image-container {
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Services section */
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.card {
+    transition: transform 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    background-color: #24bf41;
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--navbar-bg);
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #24bf41;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+/* Badges */
+.badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Social Media Icons */
+.social-icons a {
+    transition: color 0.3s ease;
+}
+
+/* WhatsApp link */
+.fa-whatsapp {
+    color: #25D366;
+    margin-right: 5px;
+}
+
+/* Social icons hover effects */
+.social-icons a:hover .fa-facebook-f {
+    color: #1877F2;
+}
+
+.social-icons a:hover .fa-instagram {
+    color: #E4405F;
+}
+
+.social-icons a:hover .fa-twitter {
+    color: #1DA1F2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .welcome-banner {
+        padding: 6rem 0 3rem;
+    }
+    
+    .logo-img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .navbar-collapse {
+        background-color: var(--navbar-bg);
+        padding: 1rem;
+    }
+}
