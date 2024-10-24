@@ -1,55 +1,69 @@
+/* Variables globales */
 :root {
     --navbar-bg: #022c5d;
+    --text-light: #ffffff;
 }
 
-/* Body adjustment for fixed header */
+/* Estilos generales */
 body {
-    padding-top: 76px;
+    padding-top: 100px;
 }
 
-/* Navbar styles */
-.custom-navbar {
+/* Navbar */
+.navbar {
     background-color: var(--navbar-bg) !important;
-    padding: 0.5rem 0;
+    padding: 10px 0 !important;
+}
+
+.navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 
 .logo-img {
-    height: 150px;
-    width: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
+    transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-link {
-    color: white !important;
-    padding: 0.5rem 1rem !important;
-    transition: color 0.3s ease;
+    color: var(--text-light) !important;
+    margin: 0 10px;
 }
-
 .navbar-nav .nav-link:hover {
     color: #24bf41 !important;
 }
 
+.navbar-toggler {
+    border-color: var(--text-light) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
 /* Hero section */
 .hero-section {
-    position: relative;
-    padding: 0;
-    margin-top: -76px; /* Compensate for fixed header */
+    margin-top: -100px;
+    padding-top: 100px;
 }
 
 .welcome-banner {
     background-color: var(--navbar-bg);
-    padding: 14rem 0 4rem;
+    padding: 60px 0;
+    color: var(--text-light);
     text-align: center;
-    
 }
 
 .hero-image-container {
     width: 100%;
     overflow: hidden;
-    
 }
-
 
 .hero-image-container img {
     width: 100%;
@@ -57,33 +71,20 @@ body {
     object-fit: cover;
 }
 
-/* Services section */
-.service-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.card {
-    transition: transform 0.3s ease;
-    border: none;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card-body {
-    background-color: #24bf41;
-}
-
-/* Footer styles */
+/* Footer */
 footer {
-    background-color: var(--navbar-bg);
+    background-color: var(--navbar-bg) !important;
+    color: var(--text-light) !important;
+    padding: 40px 0;
+}
+
+footer h4 {
+    color: var(--text-light);
+    margin-bottom: 20px;
 }
 
 footer a {
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -92,18 +93,45 @@ footer a:hover {
     color: #24bf41;
 }
 
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
 .social-icons {
     display: flex;
     gap: 1rem;
     justify-content: center;
 }
-
-@media (min-width: 768px) {
-    .social-icons {
-        justify-content: flex-start;
-    }
+.social-icons a:hover {
+    opacity: 0.8;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: var(--navbar-bg);
+        padding: 10px;
+    }
+    
+    .hero-image-container {
+        max-height: 300px;
+    }
+    
+    .hero-image-container img {
+        height: 300px;
+    }
+}
 /* Badges */
 .badge {
     font-size: 0.9rem;
@@ -132,21 +160,4 @@ footer a:hover {
 
 .social-icons a:hover .fa-twitter {
     color: #1DA1F2;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .welcome-banner {
-        padding: 6rem 0 3rem;
-    }
-    
-    .logo-img {
-        height: 100px;
-        width: 100px;
-    }
-
-    .navbar-collapse {
-        background-color: var(--navbar-bg);
-        padding: 1rem;
-    }
 }
